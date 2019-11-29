@@ -37,7 +37,7 @@ brew install thefuck && echo 'eval $(thefuck --alias)' >> .zshrc
 ## Development setup
 ```
 mkdir ~/Code && cd ~/Code
-mkdir java python js go
+mkdir java python js go chsarp
 ```
 
 ### Python
@@ -66,9 +66,12 @@ mkdir -p $ORACLE_HOME
 cd $ORACLE_HOME
 wget https://download.oracle.com/otn_software/mac/instantclient/193000/instantclient-basic-macos.x64-19.3.0.0.0dbru.zip
 wget https://download.oracle.com/otn_software/mac/instantclient/193000/instantclient-sdk-macos.x64-19.3.0.0.0dbru.zip
-tar -xvf instantclient-basic-macos.x64-19.3.0.0.0dbru.zip
-tar -xzf instantclient-sdk-macos.x64-19.3.0.0.0dbru.zip
-rm instantclient-*
+tar -xvf -C . instantclient-basic-macos.x64-19.3.0.0.0dbru.zip
+tar -xzf -C . instantclient-sdk-macos.x64-19.3.0.0.0dbru.zip
+rm instantclient-*.zip
+cd /usr/local/lib
+ln -s /usr/local/lib/share/oracle libclntsh.dylib.19.1
+ln -s /usr/local/lib/share/oracle libocci.dylib.19.1
 ```
 ### Java
 ```
@@ -93,12 +96,13 @@ brew install golang
 ```
 brew cask install jetbrains-toolbox sublime-text postman docker sourcetree awscli dash
 mas install 412536790  # Codebox
+mas install 1461845568 # Gifox 2
 ```
 
 ## Apps
 ### Office
 ```
-brew cask install slack microsoft-office calibre openconnect 
+brew cask install slack microsoft-office openconnect 
 ```
 
 ### Browsers
@@ -114,5 +118,6 @@ mas install 441258766  # Magnet
 
 ### Rest
 ```
-brew cask install telegram spotify tweetbot
+brew tap homebrew/cask-drivers
+brew cask install telegram spotify tweetbot sonos kindle calibre steam discord
 ```
