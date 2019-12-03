@@ -97,6 +97,7 @@ brew install golang
 brew cask install jetbrains-toolbox sublime-text postman docker sourcetree awscli dash
 mas install 412536790  # Codebox
 mas install 1461845568 # Gifox 2
+mas install 1295203466 # Remote Desktop 10
 ```
 
 ## Apps
